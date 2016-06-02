@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Sobat</string>
+    <string name="title_activity_main">Home</string>
+
+    <string name="create_activity">Create A Receipt</string>
+    <string name="data_collection_activity">Data Collection</string>
+    <string name="detail_activity">Medicine Details</string>
+
+    <string name="search_data">Search</string>
+    <string name="title_activity_basic">BasicActivity</string>
+</resources>

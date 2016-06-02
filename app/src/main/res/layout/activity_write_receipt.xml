@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.studio.kodkod.sobat.WriteReceiptActivity">
+
+    <ListView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/activity_vertical_margin">
+    </ListView>
+
+    <Button
+        android:id="@+id/view_button"
+        android:layout_width="144dp"
+        android:layout_height="48dp"
+        android:text="View"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/list"
+        android:layout_margin="@dimen/activity_vertical_margin"/>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/addReceiptBtn"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:src="@drawable/ic_action_add"
+        android:scaleType="centerInside"
+        android:layout_margin="@dimen/activity_vertical_margin"/>
+</RelativeLayout>

@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "593978053748",
+    "firebase_url": "https://sobat.firebaseio.com",
+    "project_id": "project-6457087459414997205",
+    "storage_bucket": "project-6457087459414997205.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:593978053748:android:e6f68dc37a4b6982",
+        "android_client_info": {
+          "package_name": "com.studio.kodkod.sobat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "593978053748-0k15lj3qe0j6fsb6jchamrnflpumf6b2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB2tn0-tdAZws6cRVhCB33vfqEoMQSsRdk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
