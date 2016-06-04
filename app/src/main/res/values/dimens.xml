@@ -22,4 +22,5 @@
     <dimen name="search_box_padding_input">4dp</dimen>
 
     <dimen name="floating_btn">64dp</dimen>
+    <dimen name="default_view">2dp</dimen>
 </resources>

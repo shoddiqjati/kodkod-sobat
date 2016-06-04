@@ -3,9 +3,11 @@ package com.studio.kodkod.sobat;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.text.Layout;
 import android.view.View;
 import android.widget.AdapterView;
@@ -21,9 +23,9 @@ import java.util.ArrayList;
 
 public class WriteReceiptActivity extends AppCompatActivity {
 
-    ListView listView, obaLv, dosisLv;
+    ListView listView;
     FloatingActionButton addReceiptBtn;
-    Dialog dialog, mDialog;
+    Dialog dialog;
     Context context = this;
     Button viewBtn;
     ArrayAdapter<String> adapter;
@@ -33,18 +35,31 @@ public class WriteReceiptActivity extends AppCompatActivity {
     Button doneBtn, sediaanNav, dosisNav, peresepanNav, kontraNav;
     TextView ketTv;
 
-    int counter = 0;
-    String act = "";
     int spinnerPosition = 0;
     String recordObat, recordSediaan, recordDosis, recordTotal, recordAturan;
     String infoSediaan, infoDosis, infoPeresepan, infoKontra;
+
+    Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_write_receipt);
+
+        toolbar = (Toolbar) findViewById(R.id.main_toolbar);
+        toolbar.setLogo(R.mipmap.ic_launcher);
+        toolbar.setTitle("S-Obat");
+        toolbar.setTitleTextColor(Color.WHITE);
+
         addReceiptBtn = (FloatingActionButton) findViewById(R.id.addReceiptBtn);
         viewBtn = (Button) findViewById(R.id.view_button);
+        viewBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(WriteReceiptActivity.this, PreviewActivity.class);
+                startActivity(intent);
+            }
+        });
 
         Data.rNamaObat.clear();
         Data.rBentukSediaan.clear();
@@ -173,5 +188,20 @@ public class WriteReceiptActivity extends AppCompatActivity {
             listView.setAdapter(adapter);
             listView.setVisibility(View.INVISIBLE);
         }
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
     }
 }

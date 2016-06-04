@@ -1,8 +1,10 @@
 package com.studio.kodkod.sobat;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -10,10 +12,17 @@ public class DetailActivity extends AppCompatActivity {
 
     TextView namaObat, golongan, bentukSediaan, indikasi, kontraIndikasi, perhatian, efekSamping, dosis, interaksiObat, kemasan, peresepan;
     String index;
+    Toolbar toolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
+
+        toolbar = (Toolbar) findViewById(R.id.main_toolbar);
+        toolbar.setLogo(R.mipmap.ic_launcher);
+        toolbar.setTitle("S-Obat");
+        toolbar.setTitleTextColor(Color.WHITE);
+
         initObject();
     }
 
@@ -45,5 +54,20 @@ public class DetailActivity extends AppCompatActivity {
         interaksiObat.setText(Data.interaksiObat[position]);
         kemasan.setText(Data.kemasan[position]);
         peresepan.setText(Data.peresepan[position]);
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
     }
 }

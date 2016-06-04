@@ -1,30 +1,39 @@
 package com.studio.kodkod.sobat;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.RelativeLayout;
 
-import com.firebase.client.DataSnapshot;
-import com.firebase.client.Firebase;
-import com.firebase.client.FirebaseError;
-import com.firebase.client.ValueEventListener;
+//import com.firebase.client.DataSnapshot;
+//import com.firebase.client.Firebase;
+//import com.firebase.client.FirebaseError;
+//import com.firebase.client.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     RelativeLayout createReceiptRL, drugDataRL;
 
     Data data;
-    Firebase rootRef;
+//    Firebase rootRef;
+
+    Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        toolbar = (Toolbar) findViewById(R.id.main_toolbar);
+        toolbar.setLogo(R.mipmap.ic_launcher);
+        toolbar.setTitle("S-Obat");
+        toolbar.setTitleTextColor(Color.WHITE);
+
         data = new Data();
-        Firebase.setAndroidContext(this);
+//        Firebase.setAndroidContext(this);
         //readDatabase();
         initObject();
     }
@@ -37,7 +46,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         drugDataRL.setOnClickListener(this);
     }
 
-    private void readDatabase() {
+    /*private void readDatabase() {
         createArray();
         rootRef = new Firebase("https://sobat.firebaseio.com/");
         rootRef.addValueEventListener(new ValueEventListener() {
@@ -64,9 +73,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             }
         });
-    }
+    }*/
 
-    private void createArray() {
+    /*private void createArray() {
         data.namaObat = new String[4];
         data.golongan = new String[4];
         data.bentukSediaan = new String[4];
@@ -78,7 +87,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         data.interaksiObat = new String[4];
         data.kemasan = new String[4];
         data.peresepan = new String[4];
-    }
+    }*/
 
     @Override
     public void onClick(View v) {
@@ -92,5 +101,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Intent intent1 = new Intent(this, DataCollectionActivity.class);
                 startActivity(intent1);
         }
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
     }
 }
